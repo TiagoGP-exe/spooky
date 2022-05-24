@@ -14,7 +14,7 @@ const ItemProducts: FC<ItemProductsProps> = ({ name, isSelected, link }) => {
   return (
     <div
       onClick={() => link && push(link)}
-      className={` animation hover:scale-110 cursor-pointer ${
+      className={` animation hover:scale-110 cursor-none sm:cursor-pointer ${
         isSelected
           ? `scale-110 active ${name} hover:scale-[1.2]`
           : 'opacity-60 hover:opacity-70'
