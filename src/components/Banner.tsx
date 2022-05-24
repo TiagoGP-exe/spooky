@@ -27,7 +27,7 @@ const Banner: FC = () => (
       <div className='particle particle-4 '></div>
     </div>
 
-    <div className='bg-[url("/bg.png")] bg-fixed bg-left sm:bg-center absolute h-full w-full shake'></div>
+    <div className='bg-[url("/bg.png")] bg-fixed bg-right xl:bg-center absolute h-full w-full shake animation'></div>
   </div>
 )
 
