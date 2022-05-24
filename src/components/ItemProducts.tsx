@@ -22,7 +22,7 @@ const ItemProducts: FC<ItemProductsProps> = ({ name, isSelected, link }) => {
     >
       <img
         src={`/box/box-${name}.png`}
-        className=' max-w-[70vw] sm:max-w-[18rem]  md:max-w-[24rem] w-[90%]'
+        className=' max-w-[70vw] sm:max-w-[18rem]  md:max-w-[24rem] w-[90%] pointer-events-none cursor-none select-none '
         alt={name}
       />
     </div>
