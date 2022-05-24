@@ -20,7 +20,14 @@ const Banner: FC = () => (
     </div>
     <div className='absolute w-full min-h-screen bg-gradient-to-t via-[#000000B2] from-black z-10' />
 
-    <div className='bg-[url("/bg.png")] bg-fixed bg-center  absolute h-full w-full'></div>
+    <div className='animation-wrapper z-[11]'>
+      <div className='particle particle-1 '></div>
+      <div className='particle particle-2 '></div>
+      <div className='particle particle-3 '></div>
+      <div className='particle particle-4 '></div>
+    </div>
+
+    <div className='bg-[url("/bg.png")] bg-fixed bg-left sm:bg-center absolute h-full w-full shake'></div>
   </div>
 )
 

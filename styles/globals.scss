@@ -2,24 +2,133 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
+@mixin particles($max) {
+   box-shadow: particles($max);
+}
+
+
 @font-face {
-  font-family: "Angel wish";
+  font-family: 'Angel wish';
   src: url('../fonts/AngelWish.ttf') format('truetype');
 }
 
 @font-face {
-  font-family: "Avenir Bold";
+  font-family: 'Avenir Bold';
   src: url('../fonts/AvenirLSTDBlack.otf');
 }
 
 @font-face {
-  font-family: "Avenir Regular";
+  font-family: 'Avenir Regular';
   src: url('../fonts/AvenirLSTDMedium.otf');
 }
 
 @font-face {
-  font-family: "Play fair";
+  font-family: 'Play fair';
   src: url('../fonts/PlayfairDisplayBlack.ttf');
+}
+
+/* Config */
+$color-bg: #111;
+$color-particle: rgb(239, 66, 66);
+$spacing: 2560px;
+$time-1: 60s;
+$time-2: 120s;
+$time-3: 180s;
+$time-4: 600s;
+
+/* Pauls awesome mixin */
+@function particles($max) {
+   $val: 0px 0px $color-particle;
+   @for $i from 1 through $max {
+      $val: #{$val},
+      random($spacing)+px random($spacing)+px $color-particle;
+   }
+   @return $val;
+}
+
+
+.animation-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.particle,
+.particle:after {
+  background: transparent;
+}
+
+.particle:after {
+  position: absolute;
+  content: "";
+  top: $spacing;
+}
+
+.particle-1 {
+  animation: animParticle $time-1 linear infinite;
+  @include particles(600);
+  height: 1px;
+  width: 1px;
+}
+
+.particle-1:after {
+  @include particles(600);
+  height: 1px;
+  width: 1px;
+}
+
+.particle-2 {
+  animation: animParticle $time-2 linear infinite;
+  @include particles(200);
+  height: 2px;
+  width: 2px;
+}
+
+.particle-2:after {
+  @include particles(200);
+  height: 2px;
+  width: 2px;
+}
+
+.particle-3 {
+  animation: animParticle $time-3 linear infinite;
+  @include particles(100);
+  height: 3px;
+  width: 3px;
+}
+
+.particle-3:after {
+  @include particles(100);
+  height: 3px;
+  width: 3px;
+}
+
+.particle-4 {
+  animation: animParticle $time-4 linear infinite;
+  @include particles(400);
+  height: 1px;
+  width: 1px;
+}
+
+.particle-4:after {
+  @include particles(400);
+  height: 1px;
+  width: 1px;
+}
+
+@keyframes animParticle {
+  from { transform: translateY(0px); }
+  to   { transform: translateY($spacing * -1); }
+}
+
+.page-wrapper {
+    text-align: center;
+    color: #fff;
+    z-index: 2;
 }
 
 
@@ -28,44 +137,42 @@ a {
   text-decoration: none;
 }
 
-
 .angel {
-  font-family: "Angel wish";
+  font-family: 'Angel wish';
 }
 
 .avenirBold {
-  font-family: "Avenir Bold";
+  font-family: 'Avenir Bold';
 }
 
 .avenir {
-  font-family: "Avenir Regular";
+  font-family: 'Avenir Regular';
 }
-
 
 .playfair {
   font-family: 'Playfair Display', serif;
 }
 
-
-
-.nosferatu{
-  &:hover, &.active {
-    filter: drop-shadow(0px 0px 12px rgba(212,19,45,1)) ;
+.nosferatu {
+  &:hover,
+  &.active {
+    filter: drop-shadow(0px 0px 12px rgba(212, 19, 45, 1));
   }
 }
 
-.frankenstein{
-  &:hover, &.active{
-    filter: drop-shadow(0px 0px 12px rgba(65, 125, 102, 1)) ;
+.frankenstein {
+  &:hover,
+  &.active {
+    filter: drop-shadow(0px 0px 12px rgba(65, 125, 102, 1));
   }
 }
 
-.mumia{
-  &:hover, &.active{
-    filter: drop-shadow(0px 0px 8px rgba(221, 197, 70, 1)) ;
+.mumia {
+  &:hover,
+  &.active {
+    filter: drop-shadow(0px 0px 8px rgba(221, 197, 70, 1));
   }
 }
-
 
 * {
   word-spacing: 0px;
@@ -80,40 +187,37 @@ a {
     color: rgb(87, 82, 107);
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.288);
   }
-  
+
   /* custom scrollbar */
   ::-webkit-scrollbar {
     width: 0.5rem;
   }
-  
+
   ::-webkit-scrollbar-track {
     box-sizing: content-box;
     border-radius: 0.5rem;
   }
-  
+
   ::-webkit-scrollbar-thumb {
-    background-color: #EB1B28;
+    background-color: #eb1b28;
     border-radius: 0.5rem;
   }
-  
+
   ::-webkit-scrollbar-thumb:hover {
     background-color: #ccc;
   }
 }
-
 
 .containerLandingPage {
   min-height: 100vh;
   background-color: '#F2F3F7';
 }
 
-
 .animation {
   transition: all 0.6s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
 body {
-
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #000;
