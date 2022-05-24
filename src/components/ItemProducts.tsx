@@ -8,12 +8,7 @@ export interface ItemProductsProps {
   link?: string
 }
 
-const ItemProducts: FC<ItemProductsProps> = ({
-  selected,
-  name,
-  isSelected,
-  link,
-}) => {
+const ItemProducts: FC<ItemProductsProps> = ({ name, isSelected, link }) => {
   const { push } = useRouter()
 
   return (
