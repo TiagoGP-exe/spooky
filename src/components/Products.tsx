@@ -22,9 +22,9 @@ const Products = () => {
   return (
     <div id='products' className='flex justify-center items-center py-10'>
       <div className='flex flex-col sm:flex-row max-w-screen-xl  justify-evenly'>
-        <div className='flex flex-col items-start gap-2 sm:w-5/12 p-4'>
-          <h2 className='text-[#EB1B28] font-bold text-6xl playfair mb-2'>
-            Lorem ipsum dolor sit amet, consectetur
+        <div className='flex flex-col items-start gap-2 sm:w-5/12 p-8'>
+          <h2 className='text-[#EB1B28] font-bold text-[2.75rem] leading-[3rem] sm:text-6xl playfair mb-2'>
+            Coleção horror clássico Spooky!
           </h2>
           <p className='text-white avenir text-justify'>
             Estamos trazendo de volta à vida personagens do horror clássico para

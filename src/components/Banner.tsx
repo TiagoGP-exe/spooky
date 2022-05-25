@@ -2,7 +2,7 @@ import Link from 'next/link'
 import React, { FC } from 'react'
 
 const Banner: FC = () => (
-  <div className='h-[100vh] relative flex items-center justify-center'>
+  <div className='h-[100vh] relative flex items-center justify-center bg-[url("/bg.png")] bg-fixed bg-right sm:bg-center'>
     <div className='absolute  z-20 flex flex-col h-full  items-center justify-evenly'>
       <img src='/logo.svg' alt='' className=' h-48 max-w-[80%]' />
       <div className='flex flex-col items-center gap-6'>
@@ -26,8 +26,6 @@ const Banner: FC = () => (
       <div className='particle particle-3 '></div>
       <div className='particle particle-4 '></div>
     </div>
-
-    <div className='bg-[url("/bg.png")] bg-fixed bg-right xl:bg-center absolute h-full w-full shake animation'></div>
   </div>
 )
 
