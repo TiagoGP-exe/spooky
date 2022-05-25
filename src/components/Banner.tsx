@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Link from 'next/link'
 import React, { FC } from 'react'
 
@@ -20,10 +21,11 @@ const Banner: FC = () => (
     </div>
     <div className='absolute w-full min-h-screen bg-gradient-to-t via-[#000000B2] from-black z-10' />
 
-    <img
-      src='bg.png'
-      alt=''
-      className='sm:bg-scroll  bg-right sm:bg-center h-full w-full object-right sm:object-center object-cover pb-1'
+    <Image
+      src='/bg.png'
+      alt='background'
+      layout='fill'
+      className='sm:bg-scroll  bg-right md:bg-center h-full w-full object-right sm:object-center object-cover transition-all duration-200 '
     />
 
     <div className='animation-wrapper z-[11]'>
